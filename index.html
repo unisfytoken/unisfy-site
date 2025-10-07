@@ -97,21 +97,10 @@
   </main>
 
   <footer class="footerbar">
-    <div class="container footer">
+    <div class="container footer footer-simple">
       <div class="left">
         <img src="./assets/unisfy_official_logo.png" alt="" class="logo small" />
-        <span>© <span id="year"></span> UNISFY</span>
-      </div>
-      <div class="mini">
-        <a href="https://x.com/unisfytoken" target="_blank" rel="noopener" aria-label="X">
-          <img src="./assets/icon_x.svg" alt="X" />
-        </a>
-        <a href="https://t.me/unisfy" target="_blank" rel="noopener" aria-label="Telegram">
-          <img src="./assets/icon_tg.svg" alt="Telegram" />
-        </a>
-        <a href="https://t.me/unisfychat" target="_blank" rel="noopener" aria-label="Telegram chat">
-          <img src="./assets/icon_tg.svg" alt="Telegram chat" />
-        </a>
+        <span>© 2025 UNISFY</span>
       </div>
     </div>
   </footer>
@@ -120,9 +109,6 @@
     // ---- Configure once you launch ----
     const CONTRACT = "PASTE_CONTRACT_HERE"; // e.g., 9eH1r...YourMint...
     const PAIR = ""; // optional: Raydium pair address when pool exists
-
-    const yearEl = document.querySelector("#year");
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     const buy = document.getElementById("buyLink");
     const dex = document.getElementById("dexLink");
@@ -148,7 +134,7 @@
 
         if (ca) ca.textContent = CONTRACT;
         if (copyBtn){ copyBtn.disabled = false; }
-        if (copyLine){ copyLine.classList.remove("disabled"); }
+        if (copyLine){ copyLine.classList.remove('disabled'); }
         if (badge){ badge.href = `https://solscan.io/token/${CONTRACT}`; badge.classList.remove('hidden'); }
       }
     }
