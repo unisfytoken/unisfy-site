@@ -44,4 +44,58 @@
       enableIfReady();btn&&btn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(code.textContent.trim());btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy',1200);}catch(e){}});
     })();
   </script>
+
+  <script>
+    // ---- Configure once you launch ----
+    // Replace with your real contract (mint) when ready:
+    const CONTRACT = "PASTE_CONTRACT_HERE"; // e.g., 9eH1r...YourMint...
+    const PAIR = ""; // optional: Raydium pair address when pool exists
+
+    const yearEl = document.querySelector("#year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const buy = document.getElementById("buyLink");
+    const dex = document.getElementById("dexLink");
+    const chart = document.getElementById("chartLink");
+    const ca = document.getElementById("ca");
+    const copyBtn = document.getElementById("copyCA");
+    const copyLine = document.querySelector(".copyline");
+    const badge = document.getElementById("solscanBadge");
+
+    function isPlaceholder(addr){
+      return !addr || addr.indexOf("PASTE_") === 0;
+    }
+
+    function setupLinks(){
+      if (isPlaceholder(CONTRACT)){
+        if (badge){ badge.classList.add('hidden'); badge.href = '#'; }
+        // Keep buttons visible but disable links to avoid confusion
+        [buy, dex, chart].forEach(el => { if(el){ el.href = "#"; el.classList.add("disabled"); el.setAttribute("aria-disabled","true"); } });
+        if (copyBtn) { copyBtn.disabled = true; }
+      } else {
+        if (buy)  buy.href  = `https://jup.ag/swap?inputMint=So11111111111111111111111111111111111111112&outputMint=${CONTRACT}`;
+        if (dex)  dex.href  = `https://raydium.io/swap/?inputCurrency=sol&outputCurrency=${CONTRACT}`;
+        if (chart) chart.href = (PAIR && PAIR.length>0)
+          ? `https://dexscreener.com/solana/${PAIR}`
+          : `https://solscan.io/token/${CONTRACT}`;
+
+        if (ca) ca.textContent = CONTRACT;
+        if (badge){ badge.href = `https://solscan.io/token/${CONTRACT}`; badge.classList.remove('hidden'); }
+        if (copyBtn){ copyBtn.disabled = false; }
+        if (copyLine){ copyLine.classList.remove("disabled"); }
+      }
+    }
+
+    setupLinks();
+
+    if (copyBtn){
+      copyBtn.addEventListener("click", async ()=>{
+        try{
+          await navigator.clipboard.writeText(ca.textContent.trim());
+          copyBtn.textContent = "Copied!";
+          setTimeout(()=>copyBtn.textContent="Copy", 1200);
+        }catch(e){}
+      });
+    }
+  </script>
 </body></html>

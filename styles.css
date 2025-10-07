@@ -10,3 +10,11 @@
 @media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}}
 .copyline{display:flex;align-items:center;gap:10px;background:#eef;border:1px dashed var(--border);padding:10px;border-radius:10px}
 .btn{border:1px solid var(--border);padding:8px 12px;border-radius:10px;background:#fff}
+
+.btn img{width:16px;height:16px;display:inline-block}
+
+.btn.disabled{opacity:.6;pointer-events:none}
+
+.badge{display:inline-block;margin-top:10px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:#fff;text-decoration:none;color:var(--fg);font-size:.9rem;font-weight:600;transition:all .2s ease}
+.badge:hover{border-color:var(--accent);box-shadow:0 6px 18px rgba(107,99,255,.16);transform:translateY(-1px)}
+.hidden{display:none}
