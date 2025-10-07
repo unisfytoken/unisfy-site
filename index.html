@@ -4,39 +4,74 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>UNISFY — One World. One Community.</title>
-  <meta name="description" content="UNISFY (UNSFY) — a community token on Solana for peace, unity and global connection." />
-  <meta name="theme-color" content="#5a35ff">
+  <meta name="description" content="UNISFY (UNSFY) — a Solana community token for peace, unity and global connection." />
+  <meta name="theme-color" content="#cfd8ff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
-<body>
-  <header class="container header">
-    <div class="brand">
-      <img src="./assets/unisfy_logo_dark_512.png" alt="UNISFY logo" class="logo" />
-      <div>
-        <h1>UNISFY</h1>
-        <p class="tagline">One world. One community.</p>
-      </div>
-    </div>
+<body class="light">
+  <header class="top-banner">
+    <img src="./assets/unisfy_banner.png" alt="UNISFY banner" />
   </header>
 
+  <nav class="container nav">
+    <div class="brand">
+      <img src="./assets/unisfy_official_logo.png" alt="UNISFY logo" class="logo" />
+      <div class="title">
+        <h1>UNISFY</h1>
+        <p>One world. One community.</p>
+      </div>
+    </div>
+    <div class="right">
+      <div class="social">
+        <a class="iconlink" href="https://x.com/unisfy" target="_blank" rel="noopener" aria-label="X">
+          <img src="./assets/icon_x.svg" alt="X" />
+        </a>
+        <a class="iconlink" href="https://t.me/unisfy" target="_blank" rel="noopener" aria-label="Telegram">
+          <img src="./assets/icon_tg.svg" alt="Telegram" />
+        </a>
+        <a class="iconlink" href="https://t.me/unisfychat" target="_blank" rel="noopener" aria-label="Telegram chat">
+          <img src="./assets/icon_tg.svg" alt="Telegram chat" />
+        </a>
+      </div>
+      <a class="cta-join" href="https://t.me/unisfy" target="_blank" rel="noopener">Join Telegram</a>
+    </div>
+  </nav>
+
   <main class="container">
-    <section class="hero card">
+    <section class="card hero">
       <h2>Peace. Unity. Blockchain.</h2>
       <p>UNISFY (UNSFY) is a community token on <strong>Solana</strong> created to spread peace, unity, and global connection through Web3.</p>
       <div class="cta">
-        <a class="btn" id="buyLink" href="#" target="_blank" rel="noopener">Buy (Coming Soon)</a>
-        <a class="btn" id="dexLink" href="#" target="_blank" rel="noopener">DEX (Coming Soon)</a>
-        <a class="btn" id="chartLink" href="#" target="_blank" rel="noopener">Chart (Coming Soon)</a>
+        <a class="btn" id="buyLink" href="#" target="_blank" rel="noopener">
+          <img src="./assets/icon_buy.svg" alt="" /> Buy (Coming Soon)
+        </a>
+        <a class="btn" id="dexLink" href="#" target="_blank" rel="noopener">
+          <img src="./assets/icon_dex.svg" alt="" /> DEX (Coming Soon)
+        </a>
+        <a class="btn" id="chartLink" href="#" target="_blank" rel="noopener">
+          <img src="./assets/icon_chart.svg" alt="" /> Chart (Coming Soon)
+        </a>
       </div>
+      <div class="verify card-lite">
+        <h3>Before you buy (once live):</h3>
+        <ul class="ticks">
+          <li>✅ You’re on <strong>Solana mainnet</strong> (not testnet).</li>
+          <li>✅ The <strong>contract address</strong> below matches our official post on X and Telegram.</li>
+          <li>✅ You double-checked the <strong>token name & ticker</strong>: UNISFY ($UNSFY).</li>
+        </ul>
+        <small class="muted">Only trust announcements from our official accounts. Never send funds to DMs.</small>
+      </div>
+
       <div class="contract">
-        <label>Official Mint Address:</label>
+        <label>Contract Address:</label>
         <div class="copyline disabled">
-          <code id="ca">Coming soon — the official mint will be published here</code>
+          <code id="ca">Coming soon — the official contract will be published here</code>
+          <button class="btn" id="copyCA" disabled>Copy</button>
         </div>
-        <small class="muted">Only trust updates from our official X and Telegram.</small>
+        <small class="muted">Only trust announcements from our official X and Telegram.</small>
       </div>
     </section>
 
@@ -61,22 +96,76 @@
       </div>
     </section>
 
-    <section class="card social">
-      <h3>Community</h3>
-      <div class="cta">
-        <a class="btn" href="https://x.com/unisfy" target="_blank" rel="noopener">X (Twitter)</a>
-        <a class="btn" href="https://t.me/unisfy" target="_blank" rel="noopener">Telegram (Channel)</a>
-        <a class="btn" href="https://t.me/unisfychat" target="_blank" rel="noopener">Telegram (Chat)</a>
-        <a class="btn" href="#" target="_blank" rel="noopener">Docs (Coming Soon)</a>
+    <section class="card social-block">
+      <h3>Community & Docs</h3>
+      <div class="linkgrid">
+        <a class="linkitem" href="https://x.com/unisfy" target="_blank" rel="noopener">
+          <img src="./assets/icon_x.svg" alt="X" /> X (Twitter)
+        </a>
+        <a class="linkitem" href="https://t.me/unisfy" target="_blank" rel="noopener">
+          <img src="./assets/icon_tg.svg" alt="Telegram" /> Telegram (Channel)
+        </a>
+        <a class="linkitem" href="https://t.me/unisfychat" target="_blank" rel="noopener">
+          <img src="./assets/icon_tg.svg" alt="Telegram Chat" /> Telegram (Chat)
+        </a>
+        <a class="linkitem disabled" href="#" target="_blank" rel="noopener">
+          <img src="./assets/icon_docs.svg" alt="Docs" /> Docs (Coming Soon)
+        </a>
       </div>
     </section>
   </main>
 
-  <footer class="container footer">
-    <img src="./assets/unisfy_logo_dark_512.png" alt="" class="logo small" />
-    <p>© <span id="year"></span> UNISFY • Community project • No financial promises</p>
+  <footer class="footerbar">
+    <div class="container footer">
+      <div class="left">
+        <img src="./assets/unisfy_official_logo.png" alt="" class="logo small" />
+        <span>© <span id="year"></span> UNISFY</span>
+      </div>
+      <div class="mini">
+        <a href="https://x.com/unisfy" target="_blank" rel="noopener" aria-label="X">
+          <img src="./assets/icon_x.svg" alt="X" />
+        </a>
+        <a href="https://t.me/unisfy" target="_blank" rel="noopener" aria-label="Telegram">
+          <img src="./assets/icon_tg.svg" alt="Telegram" />
+        </a>
+        <a href="https://t.me/unisfychat" target="_blank" rel="noopener" aria-label="Telegram chat">
+          <img src="./assets/icon_tg.svg" alt="Telegram chat" />
+        </a>
+      </div>
+    </div>
   </footer>
 
-  <script src="./script.js"></script>
+  <script>
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+    (function(){
+      const code = document.getElementById("ca");
+      const btn = document.getElementById("copyCA");
+      const line = document.querySelector(".copyline");
+      function enableIfReady(){
+        if(!code || !btn) return;
+        const val = (code.textContent||"").trim();
+        const isSoon = val.toLowerCase().includes("coming soon");
+        btn.disabled = isSoon || val.length < 8;
+        if(!btn.disabled){ line.classList.remove("disabled"); }
+      }
+      enableIfReady();
+      if (btn) {
+        btn.addEventListener("click", async ()=>{
+          try {
+            await navigator.clipboard.writeText(code.textContent.trim());
+            btn.textContent = "Copied!";
+            setTimeout(()=>btn.textContent="Copy", 1200);
+          } catch(e){}
+        });
+      }
+      // When you launch, replace the text content of #ca with your contract
+      // document.getElementById("ca").textContent = "PASTE_CONTRACT_ADDRESS_HERE";
+      // enableIfReady();
+    })();
+  </script>
+
 </body>
 </html>
