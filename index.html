@@ -74,25 +74,37 @@
       </div>
     </section>
 
-    <section class="grid two">
-      <div class="card">
-        <h3>What is UNISFY?</h3>
-        <p>A cultural crypto movement to remind the world that blockchain can unite, not divide. Transparent launch. Community-first.</p>
-        <ul class="bullets">
-          <li>Network: Solana</li>
-          <li>Symbol: <strong>UNSFY</strong></li>
-          <li>Decimals: <strong>6</strong></li>
-          <li>Total supply: <strong>1,000,000,000</strong></li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Commitments</h3>
-        <ul class="bullets">
-          <li>Non‑mintable (fixed supply)</li>
-          <li>Mint authority revoked</li>
-          <li>LP locked or burned</li>
-        </ul>
-      </div>
+    <section class="card about">
+      <h3>About the Project</h3>
+      <p><strong>UNISFY</strong> is a cultural crypto initiative built on Solana to champion a simple idea: technology can unite us. We aim to create a vibrant, open, and respectful community that uses Web3 to amplify messages of peace and collaboration. The token ($UNSFY) is designed for accessibility, transparency, and long-term community alignment: fixed supply (non‑mintable), mint authority revoked, no freeze authority, and clean liquidity practices.</p>
+      <ul class="about-highlights">
+        <li><strong>Community-first:</strong> transparent communications via X and Telegram.</li>
+        <li><strong>Credibility:</strong> verified contract on Solscan and public on-chain actions.</li>
+        <li><strong>Utility-ready:</strong> listings and integrations prioritized if traction sustains.</li>
+      </ul>
+    </section>
+
+    <section class="card roadmap">
+      <h3>Roadmap</h3>
+      <ol class="steps">
+        <li>
+          <span class="step-title">Phase 1 — Token Launch</span>
+          <span class="step-meta">Target date: Oct 07, 2025</span>
+          <p>Deploy SPL token ($UNSFY) with fixed supply. Publish contract on the website and X. Revoke mint & freeze; set metadata immutable.</p>
+        </li>
+        <li>
+          <span class="step-title">Phase 2 — Liquidity & Listings</span>
+          <p>Create Raydium pool (SOL/UNSFY), enable Jupiter routing, share chart link (Dexscreener/Solscan). Communicate risk guidelines and security checks.</p>
+        </li>
+        <li>
+          <span class="step-title">Phase 3 — Community Growth</span>
+          <p>Weekly updates on X & Telegram, contests/AMAs, and transparent metrics (holders/liquidity) to earn trust and momentum.</p>
+        </li>
+        <li>
+          <span class="step-title">Phase 4 — Utility & Partnerships</span>
+          <p>Explore simple utilities (community perks, collabs) if adoption confirms product–market fit; keep clean tokenomics and no surprise mints.</p>
+        </li>
+      </ol>
     </section>
   </main>
 
@@ -106,9 +118,8 @@
   </footer>
 
   <script>
-    // ---- Configure once you launch ----
-    const CONTRACT = "PASTE_CONTRACT_HERE"; // e.g., 9eH1r...YourMint...
-    const PAIR = ""; // optional: Raydium pair address when pool exists
+    const CONTRACT = "PASTE_CONTRACT_HERE";
+    const PAIR = "";
 
     const buy = document.getElementById("buyLink");
     const dex = document.getElementById("dexLink");
@@ -118,38 +129,38 @@
     const copyLine = document.querySelector(".copyline");
     const badge = document.getElementById("solscanBadge");
 
-    function isPlaceholder(addr){ return !addr || addr.indexOf("PASTE_") === 0; }
+    function isPlaceholder(addr){{ return !addr || addr.indexOf("PASTE_") === 0; }}
 
-    function setupLinks(){
-      if (isPlaceholder(CONTRACT)){
-        [buy, dex, chart].forEach(el => { if(el){ el.href = "#"; el.classList.add("disabled"); el.setAttribute("aria-disabled","true"); } });
-        if (copyBtn) { copyBtn.disabled = true; }
-        if (badge){ badge.classList.add('hidden'); badge.href = '#'; }
-      } else {
-        if (buy)  buy.href  = `https://jup.ag/swap?inputMint=So11111111111111111111111111111111111111112&outputMint=${CONTRACT}`;
-        if (dex)  dex.href  = `https://raydium.io/swap/?inputCurrency=sol&outputCurrency=${CONTRACT}`;
+    function setupLinks(){{ 
+      if (isPlaceholder(CONTRACT)){{
+        [buy, dex, chart].forEach(el => {{ if(el){{ el.href = "#"; el.classList.add("disabled"); el.setAttribute("aria-disabled","true"); }} }});
+        if (copyBtn) {{ copyBtn.disabled = true; }}
+        if (badge){{ badge.classList.add('hidden'); badge.href = '#'; }}
+      }} else {{
+        if (buy)  buy.href  = `https://jup.ag/swap?inputMint=So11111111111111111111111111111111111111112&outputMint=${{CONTRACT}}`;
+        if (dex)  dex.href  = `https://raydium.io/swap/?inputCurrency=sol&outputCurrency=${{CONTRACT}}`;
         if (chart) chart.href = (PAIR && PAIR.length>0)
-          ? `https://dexscreener.com/solana/${PAIR}`
-          : `https://solscan.io/token/${CONTRACT}`;
+          ? `https://dexscreener.com/solana/${{PAIR}}`
+          : `https://solscan.io/token/${{CONTRACT}}`;
 
         if (ca) ca.textContent = CONTRACT;
-        if (copyBtn){ copyBtn.disabled = false; }
-        if (copyLine){ copyLine.classList.remove('disabled'); }
-        if (badge){ badge.href = `https://solscan.io/token/${CONTRACT}`; badge.classList.remove('hidden'); }
-      }
-    }
+        if (copyBtn){{ copyBtn.disabled = false; }}
+        if (copyLine){{ copyLine.classList.remove('disabled'); }}
+        if (badge){{ badge.href = `https://solscan.io/token/${{CONTRACT}}`; badge.classList.remove('hidden'); }}
+      }}
+    }}
 
     setupLinks();
 
-    if (copyBtn){
-      copyBtn.addEventListener("click", async ()=>{
-        try{
+    if (copyBtn){{
+      copyBtn.addEventListener("click", async ()=>{{
+        try{{
           await navigator.clipboard.writeText(ca.textContent.trim());
           copyBtn.textContent = "Copied!";
           setTimeout(()=>copyBtn.textContent="Copy", 1200);
-        }catch(e){}
-      });
-    }
+        }}catch(e){{}}
+      }});
+    }}
   </script>
 </body>
 </html>
